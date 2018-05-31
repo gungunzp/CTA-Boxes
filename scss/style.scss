@@ -1,0 +1,148 @@
+$white: #fff;
+$gray: #aaa;
+$beige: #C3AE93;
+$light-beige: #E4CFB4;
+$light-blue: #637EA0;
+$dark-blue: #425567;
+
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100vh;
+	//background-color: $gray;
+}
+
+.cta-box {
+	//box-sizing: border-box;
+	margin: 0 20px 20px;
+	padding: 30px 40px;
+	background: $light-beige;
+	font-family: Verdana, Arial, sans-serif;
+	//font-size: 20px;
+	text-align: center;
+	color: $dark-blue;
+	max-width: 820px;
+
+	&--double {
+		border-radius: 8px;
+		border: 6px double $beige;
+	}
+
+	&--two-colored {
+		border-radius: 10px;
+		border: 3px solid $dark-blue;
+		box-shadow: 0 0 0 6px $beige;
+	}
+
+	&__title {
+		//font-family: Verdana, Arial, sans-serif;
+		font-size: 25px;
+		margin: 0 0 20px;
+		//color: $dark-blue;
+	}
+
+	&__text {
+		//font-family: Verdana, Arial, sans-serif;
+		font-size: 14px;
+		margin: 0 0 25px;
+		//color: $dark-blue;
+	}
+}
+
+
+a.btn {
+	display: inline-block;
+	text-decoration: none !important;
+	font-size: 20px;
+	font-family: Verdana, Arial, sans-serif;
+	text-align: center;
+	/*font-family: "proxima_nova";*/
+	/*font-family: "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;*/
+	/*font-family: Consolas, "Andale Mono", Monaco, Courier, "Courier New", Verdana, Arial, sans-serif;*/
+	font-weight: 600;
+	color: $white;
+	background-color: $beige;
+	padding: .8em 2em;
+	border-radius: 3px;
+	text-transform: capitalize;
+	position: relative;
+	transform: perspective(1px)translateZ(0);
+	transition: color .3s ease-out;
+
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		border-radius: 3px;
+		transform: scaleX(0);
+		transition: transform .3s ease-out;
+		background-color: $white;
+		z-index: -1;
+	}
+
+	&:hover {
+		color: $light-blue;
+
+		&:before {
+			transform: scaleX(1);
+		}
+	}
+
+	&--light-blue {
+		color: $white;
+		background-color: $light-blue;
+
+		&:before {
+			background-color: $white;
+		}
+
+		&:hover {
+			color: $light-blue;
+		}
+	}
+
+	&--dark-blue {
+		color: $white;
+		background-color: $dark-blue;
+
+		&:before {
+			background-color: $white;
+		}
+
+		&:hover {
+			color: $dark-blue;
+		}
+	}
+
+	&--beige-blue {
+		color: $dark-blue;
+		background-color: $light-beige;
+
+		&:before {
+			background-color: $light-blue;
+		}
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+	&--beige-blue--inverse {
+		color: $white;
+		background-color: $light-blue;
+
+		&:before {
+			background-color: $light-beige;
+		}
+
+		&:hover {
+			color: $dark-blue;
+		}
+	}
+}
